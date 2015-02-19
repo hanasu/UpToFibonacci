@@ -1,10 +1,10 @@
-//Brendan O'Dowd 2/12/15
+//Brendan O'Dowd 2/18/15
+//Version 1.1
 #include <stdio.h>
 
 int input; //stores the inputted number
 const RANGE_BEGIN = 0; //the lowest number that will be accepted as input
 const RANGE_END = 35; //the largest number that will be accepted as input
-const FIB_SEED = 1; //the initial starting value of the Fibonacci sequence
 
 void check_input(); //function that will make sure user input is valid
 void fib_loop(); //calculates Fibonacci numbers with loops
@@ -27,11 +27,14 @@ void check_input(int a) { //checks to see if inputted number is with valid defin
 }
 
 void fib_loop(int bound) {
-	int first = FIB_SEED; //first and second sum required for Fibonacci sequence
-	int second = FIB_SEED;
+	int first = 0; //first and second sum required for Fibonacci sequence
+	int second = 1;
 	int result = 0; //where the new sum will be stored
 
-	if(bound >= 1) { //initial values are larger than 0
+	if(input == 0) { //if the input is 1, only the first seed should be printed, as 1 > 0
+		printf("0");
+	}
+	else { //if the number is >= 1 both seeds should be included
 		printf("%d ",first);
 		printf("%d ",second);
 	}
